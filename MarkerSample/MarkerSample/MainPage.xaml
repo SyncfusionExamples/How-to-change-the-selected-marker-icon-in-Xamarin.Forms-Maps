@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:maps="clr-namespace:Syncfusion.SfMaps.XForms;assembly=Syncfusion.SfMaps.XForms"
+             x:Class="MarkerSample.MainPage">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <DataTemplate x:Key="selectedMarker">
+                <StackLayout >
+                    <Image Source="pin.png" Scale="1" Aspect="AspectFit "  
+                           HorizontalOptions="StartAndExpand" VerticalOptions="Center"   
+                           HeightRequest="15" WidthRequest="23"   />
+                </StackLayout>
+            </DataTemplate>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <maps:SfMaps x:Name="Map" >
+        <maps:SfMaps.Layers >
+            <maps:ImageryLayer MarkerSelected="Layer_MarkerSelected" >
+                <maps:ImageryLayer.MarkerSettings>
+                    <maps:MapMarkerSetting IconColor="Red" IconSize="13" MarkerIcon="Diamond"/>
+                </maps:ImageryLayer.MarkerSettings>
+                <maps:ImageryLayer.Markers>
+                    <maps:MapMarker  Label="United States" 
+                                   Latitude="40" Longitude= "-101"/>
+                    <maps:MapMarker Label="Brazil"
+                                    Latitude="-15.7833" Longitude= "-52" />
+                    <maps:MapMarker Label="Congo" 
+                                    Latitude="-1.6" Longitude= "24.4" />
+                    <maps:MapMarker Label="Kazakhstan"
+                                    Latitude="49.9" Longitude= "72.23" />
+                    <maps:MapMarker Label="Australia" 
+                                    Latitude="-20.54" Longitude= "134.10" />
+                </maps:ImageryLayer.Markers>
+            </maps:ImageryLayer>
+        </maps:SfMaps.Layers>
+    </maps:SfMaps>
+
+</ContentPage>
