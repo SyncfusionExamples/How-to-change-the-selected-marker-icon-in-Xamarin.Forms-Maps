@@ -1,64 +1,52 @@
-# How to change the default marker icon with a custom view when selecting a marker in Xamarin.Forms Maps (SfMaps)
+# How to change the selected marker icon in Xamarin.Forms Maps
 
-This article explains how to change the default marker icon with desired view on its selection in Syncfusion Xamarin.Forms Maps control as shown in below.
+This repository contains sample of how to change the default marker icon with a custom view when selecting a marker in the [Syncfusion Xamarin.Forms Maps](https://help.syncfusion.com/xamarin/maps/getting-started) control.
 
-![](output.gif)
+Please refer the KB through this [link](https://www.syncfusion.com/kb/11959/how-to-change-the-default-marker-icon-when-selecting-a-marker-in-xamarin-forms-maps-sfmaps).
 
-Above UI customization has been achieved with the help of CustomView property from MarkerSelected event as shown in below
+## Syncfusion controls:
 
-[XAML]
+This project used the following Syncfusion control(s):
+* [SfMaps](https://www.syncfusion.com/xamarin-ui-controls/xamarin-maps)
 
-```
-    <ContentPage.Resources>
-        <ResourceDictionary>
-            <DataTemplate x:Key="selectedMarker">
-                <StackLayout >
-                    <Image Source="pin.png" Scale="1" Aspect="AspectFit "  
-                           HorizontalOptions="StartAndExpand" VerticalOptions="Center"   
-                           HeightRequest="15" WidthRequest="23"   />
-                </StackLayout>
-            </DataTemplate>
-        </ResourceDictionary>
-    </ContentPage.Resources>
-    <maps:SfMaps x:Name="Map" >
-        <maps:SfMaps.Layers >
-            <maps:ImageryLayer MarkerSelected="Layer_MarkerSelected" ResetOldSelectedView="True">
-                <maps:ImageryLayer.MarkerSettings>
-                    <maps:MapMarkerSetting IconColor="Red" IconSize="13" MarkerIcon="Diamond"/>
-                </maps:ImageryLayer.MarkerSettings>
-                <maps:ImageryLayer.Markers>
-                    <maps:MapMarker  Label="United States" 
-                                   Latitude="40" Longitude= "-101"/>
-                    <maps:MapMarker Label="Brazil"
-                                    Latitude="-15.7833" Longitude= "-52" />
-                    <maps:MapMarker Label="Congo" 
-                                    Latitude="-1.6" Longitude= "24.4" />
-                    <maps:MapMarker Label="Kazakhstan"
-                                    Latitude="49.9" Longitude= "72.23" />
-                    <maps:MapMarker Label="Australia" 
-                                    Latitude="-20.54" Longitude= "134.10" />
-                </maps:ImageryLayer.Markers>
-            </maps:ImageryLayer>
-        </maps:SfMaps.Layers>
-    </maps:SfMaps>
-```
-[C#]
+## Supported platforms
 
-```
-             
-        private void Layer_MarkerSelected(object sender, MarkerSelectedEventArgs e)
-        {
-            e.CustomView = this.Resources["selectedMarker"] as DataTemplate;
-        }
+| Platforms | Supported versions |
+| --------- | ------------------ |
+| Android   | API level 21 and later versions |
+| iOS | iOS 9.0 and later versions |
+| UWP | Windows 10 devices |
 
-```
+## Requirements to run the sample
 
-## See also
+* [Visual Studio](https://visualstudio.microsoft.com/downloads/) or [Visual Studio for Mac](https://visualstudio.microsoft.com/vs/mac/)
 
-[How to customize the bubble marker in Xamarin.Forms Maps (SfMaps)](https://help.syncfusion.com/xamarin/maps/bubblemarker#customizing-bubble-marker)
+Refer to the following link for more details - [System Requirements](https://help.syncfusion.com/xamarin/system-requirements)
 
-[How to customize the data labels in Xamarin.Forms Maps (SfMaps)](https://help.syncfusion.com/xamarin/maps/datalabels#customizing-data-labels)
+## How to run the sample
 
-[How to customize the legend in Xamarin.Forms Maps (SfMaps)](https://help.syncfusion.com/xamarin/maps/legend)
+1. Clone the sample and open it in Visual Studio.
 
-[How to customize the tooltip in Xamarin Maps (SfMaps)](https://help.syncfusion.com/xamarin/maps/tooltip)
+   *Note: If you download the sample using the "Download ZIP" option, right-click it, select Properties, and then select Unblock.*
+   
+2. Register your license key in the App.xaml.cs file as demonstrated in the following code.
+
+		public App()
+		{
+			//Register Syncfusion license
+			Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("YOUR LICENSE KEY");
+	
+			InitializeComponent();
+	
+			MainPage = new App1.MainPage();
+		}
+		
+	Refer to this [link](https://help.syncfusion.com/xamarin/licensing/overview) for more details.
+	
+3. Clean and build the application.
+
+4. Run the application.
+
+## License
+
+Syncfusion has no liability for any damage or consequence that may arise by using or viewing the samples. The samples are for demonstrative purposes, and if you choose to use or access the samples, you agree to not hold Syncfusion liable, in any form, for any damage that is related to use, for accessing, or viewing the samples. By accessing, viewing, or seeing the samples, you acknowledge and agree Syncfusion’s samples will not allow you seek injunctive relief in any form for any claim related to the sample. If you do not agree to this, do not view, access, utilize, or otherwise do anything with Syncfusion’s samples. 
