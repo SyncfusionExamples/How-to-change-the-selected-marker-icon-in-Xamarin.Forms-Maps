@@ -1,6 +1,6 @@
 # How to change the selected marker icon in Xamarin.Forms Maps
 
-This repository contains sample of how to change the default marker icon with a custom view when selecting a marker in the [Syncfusion Xamarin.Forms Maps](https://help.syncfusion.com/xamarin/maps/getting-started) control.
+This repository contains sample to change the default marker icon with a custom view when selecting a marker in the [Syncfusion Xamarin.Forms Maps](https://help.syncfusion.com/xamarin/maps/getting-started) control.
 
 Please refer the KB through this [link](https://www.syncfusion.com/kb/11959/how-to-change-the-default-marker-icon-when-selecting-a-marker-in-xamarin-forms-maps-sfmaps).
 
